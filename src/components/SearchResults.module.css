@@ -1,0 +1,42 @@
+.results_container {
+  border-top: 3px solid black;
+}
+
+.results_container p {
+  margin-left: 15px;
+  
+}
+
+.results_box {
+  border: 3px solid black;
+  /* padding: 10px; */
+  margin: 10px;
+}
+
+.headrow {
+  display: flex;
+  background-color: rgba(128, 128, 128, 0.657);
+  width: 100%;
+  justify-content: space-between;
+}
+/* .headrow p {
+    background-color: yellow;
+} */
+
+.headrow_street_name {
+  width: 50%;
+  /* flex-grow: 2; */
+}
+
+.headrow_zoom {
+  margin-right: 40px;
+}
+
+.results_box ul {
+  padding: 0;
+  overflow-y: auto;
+  height: 245px;
+  margin: 0;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
