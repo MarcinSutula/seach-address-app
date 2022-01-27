@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import classes from "./SearchForm.module.css";
 import { useDispatch } from "react-redux";
 import { getResultsThunk } from "../app/getResultsThunk";
+import { LABEL_FIRST, LABEL_SECOND, INPUTS_NUMBER } from "../config";
+import { searchAddressActions } from "../app/store";
 
 function SearchForm(props) {
   const dispatch = useDispatch();
@@ -13,23 +15,26 @@ function SearchForm(props) {
   };
 
   const clearSearchHandler = () => {
+    dispatch(searchAddressActions.resetResultsStatus());
     reset();
   };
 
   return (
     <form onSubmit={handleSubmit(submitSearchHandler)}>
       <Input
-        label="Ulica: "
+        label={`${LABEL_FIRST}: `}
         register={register}
-        registerName="streetName"
+        registerName="input1"
         maxLength={30}
       />
-      <Input
-        label="Numer: "
-        register={register}
-        registerName="streetNumber"
-        maxLength={6}
-      />
+      {INPUTS_NUMBER === 2 && (
+        <Input
+          label={`${LABEL_SECOND}: `}
+          register={register}
+          registerName="input2"
+          maxLength={30}
+        />
+      )}
       <div className={classes.button_container}>
         <button>Szukaj</button>
         <button type="button" onClick={clearSearchHandler}>

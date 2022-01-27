@@ -1,9 +1,12 @@
 import classes from "./Result.module.css";
+import { INPUTS_NUMBER } from "../config";
 
 function Result(props) {
   const zoomInHandler = () => {
     console.log(props.result);
   };
+
+  const getValueFromObjByIndex = (obj, index) => Object.values(obj)[index];
 
   return (
     <li
@@ -13,9 +16,13 @@ function Result(props) {
         backgroundColor: (props.i + 1) % 2 === 0 ? "#d3d3d3" : "#F5F5F5",
       }}
     >
-      <p className={classes.row_street_name}>{props.result.attributes.ulica}</p>
+      <p className={classes.row_street_name}>
+        {getValueFromObjByIndex(props.result.attributes, 0)}
+      </p>
       <p style={{ marginLeft: props.resultsLength > 4 ? "46px" : "40px" }}>
-        {props.result.attributes.numerPorza}
+        {INPUTS_NUMBER === 2
+          ? getValueFromObjByIndex(props.result.attributes, 1)
+          : ""}
       </p>
       <button
         style={{ marginRight: props.resultsLength > 4 ? "0px" : "15px" }}

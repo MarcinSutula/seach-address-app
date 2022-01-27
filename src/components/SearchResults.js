@@ -2,45 +2,19 @@ import classes from "./SearchResults.module.css";
 import Result from "./Result";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
+import { LABEL_FIRST, LABEL_SECOND, INPUTS_NUMBER } from "../config";
 
 function SearchResults() {
   const results = useSelector((state) => state.searchResults);
-  const searchStatus = useSelector((state) => state.getResultStatus);
-
-  // const DUMMY_RESULTS = [
-  //   {
-  //     streetName: "Kowalewska",
-  //     streetNumber: "12",
-  //   },
-  //   {
-  //     streetName: "Kowalewskaaaaaaa",
-  //     streetNumber: "122",
-  //   },
-  //   {
-  //     streetName: "Kowalewska",
-  //     streetNumber: "1222",
-  //   },
-  //   {
-  //     streetName: "Kowalewska",
-  //     streetNumber: "12",
-  //   },
-  //   {
-  //     streetName: "Kowalewska",
-  //     streetNumber: "12",
-  //   },
-  //   {
-  //     streetName: "Kowalewska",
-  //     streetNumber: "12",
-  //   },
-  // ];
+  const searchStatus = useSelector((state) => state.getResultsStatus);
 
   return (
     <div className={classes.results_container}>
-      <p>Wyniki: </p>
+      <p>{`Wyniki: ${results.length}`} </p>
       <div className={classes.results_box}>
         <div className={classes.headrow}>
-          <p className={classes.headrow_street_name}>Ulica</p>
-          <p>Numer</p>
+          <p className={classes.headrow_street_name}>{LABEL_FIRST}</p>
+          <p>{INPUTS_NUMBER === 2 ? LABEL_SECOND : ""}</p>
           <p className={classes.headrow_zoom}>Przybliż</p>
         </div>
         {searchStatus === "loading" && <Spinner big={true} />}

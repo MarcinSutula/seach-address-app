@@ -2,37 +2,33 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { getResultsThunk } from "./getResultsThunk";
 
 const initialState = {
-  queryFirst: "Ulica",
-  querySecond: "Numer",
   searchResults: [],
-  getResultStatus: "",
+  getResultsStatus: "",
 };
 
 const searchAddressSlice = createSlice({
   name: "search-address",
   initialState,
   reducers: {
-    changeQuery(state, action) {
-      state.queryFirst = action.payload.query;
-    },
-    resetResultStatus(state) {
-      state.getResultStatus = "";
+    resetResultsStatus(state) {
+      state.getResultsStatus = "";
     },
   },
   extraReducers: {
     [getResultsThunk.pending]: (state) => {
-      state.getResultStatus = "loading";
+      state.getResultsStatus = "loading";
     },
     [getResultsThunk.fulfilled]: (state, action) => {
       if (!action.payload || action.payload.length === 0) {
-        state.getResultStatus = "no results";
+        state.searchResults = [];
+        state.getResultsStatus = "no results";
       } else {
         state.searchResults = action.payload;
-        state.getResultStatus = "success";
+        state.getResultsStatus = "success";
       }
     },
     [getResultsThunk.rejected]: (state) => {
-      state.getResultStatus = "failed";
+      state.getResultsStatus = "failed";
       alert("Something went wrong !");
     },
   },

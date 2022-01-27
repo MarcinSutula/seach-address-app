@@ -12,21 +12,11 @@
 }
 
 .title {
-  display: flex;
   border-bottom: 3px solid black;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.title h2 {
-  padding: 0;
+  padding: 5px;
   font-weight: 500;
-  margin-left: 5px;
-}
-
-.options {
-  margin-right: 5px;
-  cursor: pointer;
+  font-size: 22px;
+  margin-top: 0;
 }
 
 .map {
