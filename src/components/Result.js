@@ -1,9 +1,13 @@
 import classes from "./Result.module.css";
 import { INPUTS_NUMBER } from "../config";
+import { useDispatch } from "react-redux";
+import { searchAddressActions } from "../app/store";
 
 function Result(props) {
+  const dispatch = useDispatch();
+
   const zoomInHandler = () => {
-    console.log(props.result);
+    dispatch(searchAddressActions.setCoords(props.result.geometry));
   };
 
   const getValueFromObjByIndex = (obj, index) => Object.values(obj)[index];

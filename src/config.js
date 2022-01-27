@@ -4,13 +4,21 @@
 ////////                                                 /////////
 //////////////////////////////////////////////////////////////////
 
-/////////////////////////////// SERVER & QUERIES ///////////////////////////////
+/////////////////////////////// SERVER ////////////////////////////////////////
 
 //Server address for REST API
 export const BASIC_URL =
   "https://services5.arcgis.com/UoRAQmXv3KtNImPl/ArcGIS/rest/services/adresss/FeatureServer/0/query?";
 
-//////////////// WHERE QUERY //////////////
+/////////////////////////////// LABELS ////////////////////////////////////////
+
+///Attention - works for both labels for inputs and column names in results
+export const LABEL_FIRST = "Ulica";
+export const LABEL_SECOND = "Numer";
+
+/////////////////////////////// QUERIES ////////////////////////////////////////
+
+//////////////// WHERE QUERY ///////////////
 
 //Number of inputs (available 1 or 2)
 export const INPUTS_NUMBER = 2;
@@ -28,7 +36,7 @@ export const Q2_COMPARISON = "like";
 //Operator connecting Q1 and Q2 (if not needed, ignore)
 export const Q_OPERATOR = "and";
 
-//////////////// OTHER QUERIES /////////////////
+/////////////// OTHER QUERIES ////////////////
 
 export const OTHER_QUERIES = {
   //Object IDs
@@ -110,9 +118,3 @@ export const OTHER_QUERIES = {
   //Token
   token: "",
 };
-
-/////////////////////////////// LABELS ////////////////////////////////////////
-
-///Attention - works for both labels for inputs and column names in results
-export const LABEL_FIRST = "Ulica";
-export const LABEL_SECOND = "Numer";

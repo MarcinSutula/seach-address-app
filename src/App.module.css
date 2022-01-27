@@ -1,4 +1,4 @@
-.container {
+ .container {
   width: 1340px;
   margin: 50px auto;
   padding: 0;
@@ -19,7 +19,5 @@
   margin-top: 0;
 }
 
-.map {
-  background-color: yellow;
-  width: 60%;
-}
+
+
