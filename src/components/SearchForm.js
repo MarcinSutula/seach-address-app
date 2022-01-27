@@ -1,8 +1,11 @@
 import Input from "./Input";
 import { useForm } from "react-hook-form";
 import classes from "./SearchForm.module.css";
+import { useDispatch } from "react-redux";
+import { getResultsThunk } from "../app/getResultsThunk";
 
 function SearchForm(props) {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -10,8 +13,8 @@ function SearchForm(props) {
     formState: { errors },
   } = useForm();
 
-  const submitSearchHandler = (data) => {
-    console.log(data);
+  const submitSearchHandler = async (data) => {
+    dispatch(getResultsThunk(data));
   };
 
   const clearSearchHandler = () => {

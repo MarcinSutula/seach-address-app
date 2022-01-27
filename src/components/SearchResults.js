@@ -1,9 +1,13 @@
 import { useState } from "react";
 import classes from "./SearchResults.module.css";
 import Result from "./Result";
+import { useSelector } from "react-redux";
+import Spinner from "./Spinner";
 
 function SearchResults() {
-  const [results, setResults] = useState();
+  //   const [results, setResults] = useState();
+  const results = useSelector((state) => state.searchResults);
+  const searchStatus = useSelector((state) => state.getResultStatus);
 
   const DUMMY_RESULTS = [
     {
@@ -15,22 +19,21 @@ function SearchResults() {
       streetNumber: "122",
     },
     {
-        streetName: "Kowalewska",
-        streetNumber: "1222",
-      },
-      {
-        streetName: "Kowalewska",
-        streetNumber: "12",
-      },
-      {
-        streetName: "Kowalewska",
-        streetNumber: "12",
-      },
-      {
-        streetName: "Kowalewska",
-        streetNumber: "12",
-      },
-    
+      streetName: "Kowalewska",
+      streetNumber: "1222",
+    },
+    {
+      streetName: "Kowalewska",
+      streetNumber: "12",
+    },
+    {
+      streetName: "Kowalewska",
+      streetNumber: "12",
+    },
+    {
+      streetName: "Kowalewska",
+      streetNumber: "12",
+    },
   ];
 
   return (
@@ -42,18 +45,22 @@ function SearchResults() {
           <p>Numer</p>
           <p className={classes.headrow_zoom}>Przybliż</p>
         </div>
-        <ul>
-          {DUMMY_RESULTS.map((result, index) => {
-            return (
-              <Result
-                key={index}
-                i={index}
-                result={result}
-                resultsLength={DUMMY_RESULTS.length}
-              />
-            );
-          })}
-        </ul>
+        {searchStatus === "loading" && <Spinner big={true} />}
+        {searchStatus === "success" && (
+          <ul>
+            {results.map((result, index) => {
+              return (
+                <Result
+                  key={index}
+                  i={index}
+                  result={result}
+                  resultsLength={results.length}
+                />
+              );
+            })}
+          </ul>
+        )}
+        {searchStatus === "no results" && <h1>No results</h1>}
       </div>
     </div>
   );
