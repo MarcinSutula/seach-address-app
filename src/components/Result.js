@@ -1,6 +1,10 @@
 import classes from "./Result.module.css";
 
 function Result(props) {
+  const zoomInHandler = () => {
+    console.log(props.result);
+  };
+
   return (
     <li
       key={props.i}
@@ -13,7 +17,10 @@ function Result(props) {
       <p style={{ marginLeft: props.resultsLength > 4 ? "46px" : "40px" }}>
         {props.result.attributes.numerPorza}
       </p>
-      <button style={{ marginRight: props.resultsLength > 4 ? "0px" : "15px" }}>
+      <button
+        style={{ marginRight: props.resultsLength > 4 ? "0px" : "15px" }}
+        onClick={zoomInHandler}
+      >
         przybliż
       </button>
     </li>

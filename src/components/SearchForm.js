@@ -6,12 +6,7 @@ import { getResultsThunk } from "../app/getResultsThunk";
 
 function SearchForm(props) {
   const dispatch = useDispatch();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const submitSearchHandler = async (data) => {
     dispatch(getResultsThunk(data));
@@ -23,8 +18,18 @@ function SearchForm(props) {
 
   return (
     <form onSubmit={handleSubmit(submitSearchHandler)}>
-      <Input label="Ulica: " register={register} registerName="streetName" />
-      <Input label="Numer: " register={register} registerName="streetNumber" />
+      <Input
+        label="Ulica: "
+        register={register}
+        registerName="streetName"
+        maxLength={30}
+      />
+      <Input
+        label="Numer: "
+        register={register}
+        registerName="streetNumber"
+        maxLength={6}
+      />
       <div className={classes.button_container}>
         <button>Szukaj</button>
         <button type="button" onClick={clearSearchHandler}>

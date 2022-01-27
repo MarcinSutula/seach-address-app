@@ -24,14 +24,14 @@ ligther-grey: #F5F5F5;
 .result_container button {
   border: none;
   background-color: inherit;
-
   color: blue;
   cursor: pointer;
   margin-bottom: 10px;
   height: 10px;
   width: 25%;
   padding: 0;
-  padding-left: 10px;
+  padding-left: 20px;
+  
 }
 
 .row_street_name {

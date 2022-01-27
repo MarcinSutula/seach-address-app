@@ -1,40 +1,38 @@
-import { useState } from "react";
 import classes from "./SearchResults.module.css";
 import Result from "./Result";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
 
 function SearchResults() {
-  //   const [results, setResults] = useState();
   const results = useSelector((state) => state.searchResults);
   const searchStatus = useSelector((state) => state.getResultStatus);
 
-  const DUMMY_RESULTS = [
-    {
-      streetName: "Kowalewska",
-      streetNumber: "12",
-    },
-    {
-      streetName: "Kowalewskaaaaaaa",
-      streetNumber: "122",
-    },
-    {
-      streetName: "Kowalewska",
-      streetNumber: "1222",
-    },
-    {
-      streetName: "Kowalewska",
-      streetNumber: "12",
-    },
-    {
-      streetName: "Kowalewska",
-      streetNumber: "12",
-    },
-    {
-      streetName: "Kowalewska",
-      streetNumber: "12",
-    },
-  ];
+  // const DUMMY_RESULTS = [
+  //   {
+  //     streetName: "Kowalewska",
+  //     streetNumber: "12",
+  //   },
+  //   {
+  //     streetName: "Kowalewskaaaaaaa",
+  //     streetNumber: "122",
+  //   },
+  //   {
+  //     streetName: "Kowalewska",
+  //     streetNumber: "1222",
+  //   },
+  //   {
+  //     streetName: "Kowalewska",
+  //     streetNumber: "12",
+  //   },
+  //   {
+  //     streetName: "Kowalewska",
+  //     streetNumber: "12",
+  //   },
+  //   {
+  //     streetName: "Kowalewska",
+  //     streetNumber: "12",
+  //   },
+  // ];
 
   return (
     <div className={classes.results_container}>
@@ -60,7 +58,7 @@ function SearchResults() {
             })}
           </ul>
         )}
-        {searchStatus === "no results" && <h1>No results</h1>}
+        {searchStatus === "no results" && <h1>Brak wyników</h1>}
       </div>
     </div>
   );
