@@ -34,18 +34,22 @@ export const LABEL_SECOND = "Numer";
 
 //////////////// WHERE QUERY ///////////////
 
-//Name of first input (careful, it's not label/alias)
+//Name of first where query (careful, it's not label/alias)
 export const Q1 = "ulica";
 //How to compare matches
 export const Q1_COMPARISON = "=";
 
-//Name of second input (if not needed, ignore)
+//Name of second where query (if not needed, ignore)
 export const Q2 = "numerPorza";
 //How to compare matches
 export const Q2_COMPARISON = "like";
 
 //Operator connecting Q1 and Q2 (if not needed, ignore)
 export const Q_OPERATOR = "and";
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Available where queries: OBJECTID, miejscowos, numerPorza, kodPocztow, ulica, wyszukiwan //
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////// OTHER QUERIES ////////////////
 
