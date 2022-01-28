@@ -22,7 +22,6 @@ An app to search through addresses and display them on map (Only city Wąchock, 
 - Redux Toolkit 1.7.1 (Redux 4.1.2)
 - React Leaflet 2.8.0 (Leaflet 1.7.1)
 - React Hook Form 2.8.8
-- Material-UI 5.3.1
 
 ## Setup
 
