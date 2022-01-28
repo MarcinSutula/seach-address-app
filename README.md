@@ -26,9 +26,9 @@ An app to search through addresses and display them on map (Only city Wąchock, 
 
 ## Setup
 
-Install Node.js on your computer (https://nodejs.org/en/) - version 14.15.3 +
-Install dependencies - `npm install`
-Start development server - `npm start`
+- Install Node.js on your computer (https://nodejs.org/en/) - version 14.15.3+
+- Install dependencies - `npm install`
+- Start development server - `npm start`
 
 ## Project Status
 
