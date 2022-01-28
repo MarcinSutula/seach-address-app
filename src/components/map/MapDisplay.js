@@ -1,8 +1,8 @@
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import "./Map.css";
+import "./MapDisplay.css";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { MAP_ZOOM } from "../config";
+import { MAP_ZOOM } from "../../config";
 
 function MapDisplay() {
   const { coords, name } = useSelector((state) => state.result);
@@ -38,7 +38,6 @@ function MapDisplay() {
     <Map
       center={location}
       zoom={zoomLevel}
-      // zoomControl={true}
       onViewportChanged={mapLocOnChangeHandler}
       animate={true}
     >

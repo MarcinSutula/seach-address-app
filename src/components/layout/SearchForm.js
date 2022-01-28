@@ -1,10 +1,16 @@
-import Input from "./Input";
+import Input from "../utils/Input";
 import { useForm } from "react-hook-form";
 import classes from "./SearchForm.module.css";
 import { useDispatch } from "react-redux";
-import { getResultsThunk } from "../app/getResultsThunk";
-import { LABEL_FIRST, LABEL_SECOND, INPUTS_NUMBER } from "../config";
-import { searchAddressActions } from "../app/store";
+import { getResultsThunk } from "../../app/getResultsThunk";
+import {
+  LABEL_FIRST,
+  LABEL_SECOND,
+  INPUTS_NUMBER,
+  INPUT1_MAX_LENGTH,
+  INPUT2_MAX_LENGTH,
+} from "../../config";
+import { searchAddressActions } from "../../app/store";
 
 function SearchForm(props) {
   const dispatch = useDispatch();
@@ -15,24 +21,24 @@ function SearchForm(props) {
   };
 
   const clearSearchHandler = () => {
-    dispatch(searchAddressActions.resetResultsStatus());
+    dispatch(searchAddressActions.resetResults());
     reset();
   };
 
   return (
-    <form onSubmit={handleSubmit(submitSearchHandler)}>
+    <form onSubmit={handleSubmit(submitSearchHandler)} className={classes.form}>
       <Input
         label={`${LABEL_FIRST}: `}
         register={register}
         registerName="input1"
-        maxLength={30}
+        maxLength={INPUT1_MAX_LENGTH}
       />
       {INPUTS_NUMBER === 2 && (
         <Input
           label={`${LABEL_SECOND}: `}
           register={register}
           registerName="input2"
-          maxLength={30}
+          maxLength={INPUT2_MAX_LENGTH}
         />
       )}
       <div className={classes.button_container}>

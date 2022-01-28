@@ -14,8 +14,10 @@ const searchAddressSlice = createSlice({
   name: "search-address",
   initialState,
   reducers: {
-    resetResultsStatus(state) {
+    resetResults(state) {
       state.getResultsStatus = "";
+      state.searchResults = [];
+      state.result = { coords: [], name: "" };
     },
     setResult(state, action) {
       state.coords = [action.payload.y, action.payload.x];

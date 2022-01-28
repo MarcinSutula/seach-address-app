@@ -3,6 +3,10 @@ light-grey: #d3d3d3;
 ligther-grey: #F5F5F5;
 */
 
+/*
+Values for background color and some margins are set dynamically directly in the Result.js file
+*/
+
 .result_container {
   display: flex;
   padding: 0;

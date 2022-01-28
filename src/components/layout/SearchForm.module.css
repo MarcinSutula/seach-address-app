@@ -1,7 +1,10 @@
+.form {
+  height: 181px;
+}
+
 .button_container {
   text-align: right;
   padding: 15px;
-  
 }
 
 .button_container button {

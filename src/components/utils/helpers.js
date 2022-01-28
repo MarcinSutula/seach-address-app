@@ -1,5 +1,4 @@
 import {
-  INPUTS_NUMBER,
   Q1,
   Q1_COMPARISON,
   Q_OPERATOR,
@@ -7,7 +6,7 @@ import {
   Q2_COMPARISON,
   OTHER_QUERIES,
   BASIC_URL,
-} from "../config";
+} from "../../config";
 
 const getWhereQuery = (payload) => {
   let where = `where=${Q1}+${Q1_COMPARISON}%27${payload.input1.trim()}%27`;

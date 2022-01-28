@@ -15,6 +15,15 @@ export const BASIC_URL =
 //Level of zoom after clicking on result
 export const MAP_ZOOM = 21;
 
+/////////////////////////////// INPUTS ////////////////////////////////////////
+
+//Number of inputs (available 1 or 2)
+export const INPUTS_NUMBER = 2;
+
+//Max number of characters for given input
+export const INPUT1_MAX_LENGTH = 41;
+export const INPUT2_MAX_LENGTH = 10;
+
 /////////////////////////////// LABELS ////////////////////////////////////////
 
 ///Attention - works for both labels for inputs and column names in results
@@ -24,9 +33,6 @@ export const LABEL_SECOND = "Numer";
 /////////////////////////////// QUERIES ////////////////////////////////////////
 
 //////////////// WHERE QUERY ///////////////
-
-//Number of inputs (available 1 or 2)
-export const INPUTS_NUMBER = 2;
 
 //Name of first input (careful, it's not label/alias)
 export const Q1 = "ulica";

@@ -1,8 +1,8 @@
 import classes from "./App.module.css";
-import SearchForm from "./components/SearchForm";
-import SearchResults from "./components/SearchResults";
+import SearchForm from "./components/layout/SearchForm";
+import SearchResults from "./components/layout/SearchResults";
 import { useSelector } from "react-redux";
-import MapDisplay from "./components/MapDisplay";
+import MapDisplay from "./components/map/MapDisplay";
 
 function App() {
   const searchStatus = useSelector((state) => state.getResultsStatus);

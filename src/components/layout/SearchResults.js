@@ -1,8 +1,8 @@
 import classes from "./SearchResults.module.css";
 import Result from "./Result";
 import { useSelector } from "react-redux";
-import Spinner from "./Spinner";
-import { LABEL_FIRST, LABEL_SECOND, INPUTS_NUMBER } from "../config";
+import Spinner from "../utils/Spinner";
+import { LABEL_FIRST, LABEL_SECOND, INPUTS_NUMBER } from "../../config";
 
 function SearchResults() {
   const results = useSelector((state) => state.searchResults);

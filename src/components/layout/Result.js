@@ -1,7 +1,7 @@
 import classes from "./Result.module.css";
-import { INPUTS_NUMBER } from "../config";
+import { INPUTS_NUMBER } from "../../config";
 import { useDispatch } from "react-redux";
-import { searchAddressActions } from "../app/store";
+import { searchAddressActions } from "../../app/store";
 
 function Result(props) {
   const dispatch = useDispatch();
