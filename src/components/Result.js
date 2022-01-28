@@ -7,10 +7,12 @@ function Result(props) {
   const dispatch = useDispatch();
 
   const zoomInHandler = () => {
-    dispatch(searchAddressActions.setCoords(props.result.geometry));
+    dispatch(searchAddressActions.setResult(props.result));
   };
 
   const getValueFromObjByIndex = (obj, index) => Object.values(obj)[index];
+  
+
 
   return (
     <li

@@ -2,11 +2,11 @@ import classes from "./App.module.css";
 import SearchForm from "./components/SearchForm";
 import SearchResults from "./components/SearchResults";
 import { useSelector } from "react-redux";
-import Map from "./components/Map";
+import MapDisplay from "./components/MapDisplay";
 
 function App() {
   const searchStatus = useSelector((state) => state.getResultsStatus);
-  const coords = useSelector((state) => state.coords);
+  const coords = useSelector((state) => state.result.coords);
 
   return (
     <div className={classes.container}>
@@ -15,7 +15,7 @@ function App() {
         <SearchForm />
         {searchStatus !== "" && <SearchResults />}
       </div>
-      {searchStatus !== "" && coords.length !== 0 && <Map />}
+      {searchStatus !== "" && coords.length !== 0 && <MapDisplay />}
     </div>
   );
 }

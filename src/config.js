@@ -10,6 +10,11 @@
 export const BASIC_URL =
   "https://services5.arcgis.com/UoRAQmXv3KtNImPl/ArcGIS/rest/services/adresss/FeatureServer/0/query?";
 
+//////////////////////////////// MAP //////////////////////////////////////////
+
+//Level of zoom after clicking on result
+export const MAP_ZOOM = 21;
+
 /////////////////////////////// LABELS ////////////////////////////////////////
 
 ///Attention - works for both labels for inputs and column names in results

@@ -4,7 +4,10 @@ import { getResultsThunk } from "./getResultsThunk";
 const initialState = {
   searchResults: [],
   getResultsStatus: "",
-  coords: [],
+  result: {
+    coords: [],
+    name: "",
+  },
 };
 
 const searchAddressSlice = createSlice({
@@ -14,8 +17,13 @@ const searchAddressSlice = createSlice({
     resetResultsStatus(state) {
       state.getResultsStatus = "";
     },
-    setCoords(state, action) {
+    setResult(state, action) {
       state.coords = [action.payload.y, action.payload.x];
+
+      state.result = {
+        coords: [action.payload.geometry.y, action.payload.geometry.x],
+        name: Object.values(action.payload.attributes),
+      };
     },
   },
   extraReducers: {
