@@ -20,8 +20,6 @@ const searchAddressSlice = createSlice({
       state.result = { coords: [], name: "" };
     },
     setResult(state, action) {
-      state.coords = [action.payload.y, action.payload.x];
-
       state.result = {
         coords: [action.payload.geometry.y, action.payload.geometry.x],
         name: Object.values(action.payload.attributes),
